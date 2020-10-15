@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Icon from '@mdi/react';
-import { mdiTrashCanOutline } from '@mdi/js';
+import { mdiDelete } from '@mdi/js';
 
 class User extends Component {
   constructor(props) {
@@ -25,46 +25,45 @@ class User extends Component {
     const { isSelected } = this.state;
     const styles = {
       li: {
-       
         display: 'flex',
-        'flex-direction': 'row',
-        'align-items': 'center',
-        border: isSelected ? '4px solid purple' : 'unset',
-        "background-color": isSelected ? 'grey' : 'unset',
-        "color": isSelected ? 'white' : 'unset',
-        'border-radius': '10px',
-        width: '50vw',
-        margin: "10px",
+        flexDirection: 'row',
+        justifyContent: "space-around",
+        alignItems: 'center',
+        borderRadius: '10px',
+        margin: '2px',
+        border: isSelected ? '2px solid purple' : 'unset',
+        backgroundColor: isSelected ? 'grey' : 'white',
+        color: isSelected ? 'white' : 'black',
+        // padding: "10px",
       },
       img: {
-        'margin-right': 'auto',
-        'margin-left': '10px',
+        marginRight: '1vw',
+        marginLeft: '1vw',
         height: '50px',
         width: '50px',
-        'border-radius': '50%',
-      },
-      icon: {
-        'margin-left': 'auto',
-        'margin-right': '10px',
+        borderRadius: '50%',
       },
       info: {
-        'margin-left': '70px',
-        'margin-right': "auto",
-      }
+        marginRight: 'auto',
+      },
+      icon: {
+        marginLeft: 'auto',
+        marginRight: '1vw',
+      },
     };
     return (
       <li onClick={this.handleSelect} style={styles.li}>
         <img style={styles.img} src={profilePicture} alt='d' />
         <div style={styles.info}>
-          <h2>{name}</h2>
+          <h3>{name}</h3>
           <p>{description}</p>
         </div>
         <Icon
           style={styles.icon}
           onClick={this.handleDelete}
-          path={mdiTrashCanOutline}
+          path={mdiDelete}
           size={1}
-          color={'red'}
+          color={isSelected ? 'white' : 'grey'}
         />
       </li>
     );

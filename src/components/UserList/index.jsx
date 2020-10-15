@@ -29,30 +29,19 @@ class UserList extends Component {
   };
 
   filterItems = (filteredItem) => {
-    console.log(filteredItem);
     this.setState({
-      list: this.state.userList.filter(
+      userList: this.state.userList.filter(
         (currentItem) => currentItem.id !== filteredItem
       ),
     });
-    console.log(this.state.userList);
   };
 
   renderUserListItems = () => {
     const { userList } = this.state;
-    const styles = {
-      ul: {
-        
-        display: 'flex',
-        'flex-direction': 'column',
-        'justify-content': 'center',
-        'border-radius': '10px',
-        
-      },
-    };
+    
 
     return userList.map((user) => (
-      <User style={styles}
+      <User
         key={user.id}
         id={user.id}
         filterItems={this.filterItems}
@@ -64,7 +53,14 @@ class UserList extends Component {
   };
 
   render() {
-    return <ul>{this.renderUserListItems()}</ul>;
+    const styles = {
+      ul: {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 0,
+      },
+    };
+    return <ul style={styles.ul}>{this.renderUserListItems()}</ul>;
   }
 }
 
