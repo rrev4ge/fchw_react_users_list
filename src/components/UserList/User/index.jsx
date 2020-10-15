@@ -34,7 +34,7 @@ class User extends Component {
         border: isSelected ? '2px solid purple' : 'unset',
         backgroundColor: isSelected ? 'grey' : 'white',
         color: isSelected ? 'white' : 'black',
-        // padding: "10px",
+        padding: "5px",
       },
       img: {
         marginRight: '1vw',
@@ -42,8 +42,11 @@ class User extends Component {
         height: '50px',
         width: '50px',
         borderRadius: '50%',
+        border: '2px solid purple',
       },
       info: {
+        margin: 0,
+        marginBottom: "auto",
         marginRight: 'auto',
       },
       icon: {
@@ -55,8 +58,8 @@ class User extends Component {
       <li onClick={this.handleSelect} style={styles.li}>
         <img style={styles.img} src={profilePicture} alt='d' />
         <div style={styles.info}>
-          <h3>{name}</h3>
-          <p>{description}</p>
+          <h4 style={styles.info}>{name}</h4>
+          <p style={styles.info}>{description}</p>
         </div>
         <Icon
           style={styles.icon}
