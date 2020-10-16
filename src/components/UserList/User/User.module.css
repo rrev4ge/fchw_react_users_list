@@ -1,0 +1,30 @@
+.component {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  margin: 2px;
+  padding: 5px;
+}
+.select {
+  border: 2px solid purple;
+  background-color: grey;
+  color: white;
+}
+.userLogo {
+  margin-right: 1vw;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid purple;
+}
+.userInfo {
+  margin: 0;
+  margin-bottom: auto;
+  margin-right: auto;
+}
+.deleteIcon {
+  margin-left: auto;
+  margin-right: 1vw;
+}

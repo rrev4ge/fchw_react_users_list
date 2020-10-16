@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-
 import User from './User';
+import classNames from 'classnames/bind';
+import styles from"./UserList.module.css";
+
+const cx = classNames.bind(styles);
+
 
 class UserList extends Component {
   constructor(props) {
@@ -38,7 +42,6 @@ class UserList extends Component {
 
   renderUserListItems = () => {
     const { userList } = this.state;
-    
 
     return userList.map((user) => (
       <User
@@ -53,14 +56,10 @@ class UserList extends Component {
   };
 
   render() {
-    const styles = {
-      ul: {
-        display: 'flex',
-        flexDirection: 'column',
-        padding: 0,
-      },
+    const className = {
+      component: cx({component: true,}),
     };
-    return <ul style={styles.ul}>{this.renderUserListItems()}</ul>;
+    return <ul className={className.component}>{this.renderUserListItems()}</ul>;
   }
 }
 
